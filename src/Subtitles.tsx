@@ -20,6 +20,7 @@ const captions = [
     { start: 972, end: 1076, text: "That's how a JavaScript function executes, step by step." },
 ];
 
+
 export const Subtitles: React.FC = () => {
     const frame = useCurrentFrame();
 
@@ -34,19 +35,25 @@ export const Subtitles: React.FC = () => {
             style={{
                 justifyContent: "flex-end",
                 alignItems: "center",
-                paddingBottom: 45,
+                paddingBottom: 55,
+                paddingLeft: 80,
+                paddingRight: 80,
                 pointerEvents: "none",
             }}
         >
             <div
                 style={{
-                    backgroundColor: "rgba(0, 0, 0, 0.8)",
-                    color: "white",
-                    fontSize: 28,
-                    padding: "14px 24px",
-                    borderRadius: 10,
+                    backgroundColor: "rgba(0, 0, 0, 0.88)",
+                    color: "#FFFFFF",
+                    fontSize: 38,
+                    fontWeight: 600,
+                    lineHeight: 1.35,
+                    padding: "16px 30px",
+                    borderRadius: 12,
                     textAlign: "center",
-                    maxWidth: "85%",
+                    maxWidth: "90%",
+                    fontFamily: "Arial, sans-serif",
+                    boxShadow: "0 4px 18px rgba(0, 0, 0, 0.25)",
                 }}
             >
                 {currentCaption.text}
