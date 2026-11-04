@@ -22,7 +22,8 @@ export const HelloWorld: React.FC<HelloWorldProps> = ({
   const { durationInFrames, fps } = useVideoConfig();
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "white" }}>
+    <AbsoluteFill style={{ backgroundColor: "#101827" }}>
+    {/* <AbsoluteFill style={{ backgroundColor: "white" }}> */}
       <Interactive.Div
         name="Content fade"
         premountFor={fps}

@@ -1,54 +1,69 @@
-# Remotion video
+# CodeFlow Visuals — JavaScript Function Explainer
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+**Complex code. Clear visuals.**
 
-Welcome to your Remotion project!
+A short animated technical explainer demonstrating how JavaScript functions work through synchronized narration, code highlighting, execution stages, and subtitles.
 
-## Commands
+## Project Overview
 
-**Install Dependencies**
+This project visualizes how a JavaScript function receives arguments, assigns them to parameters, performs a calculation, and returns a result.
 
-```console
-npm i --loglevel=error
+The example uses:
+
+```javascript
+function calculateTotal(price, quantity) {
+  const total = price * quantity;
+  return total;
+}
+
+const result = calculateTotal(100, 3);
 ```
 
-**Start Preview**
+## What the Video Demonstrates
 
-```console
+- JavaScript function declaration and invocation
+- Arguments and parameters
+- Variable assignment
+- Multiplication and return values
+- Step-by-step execution visualization
+- Synchronized voice narration and subtitles
+
+## Built With
+
+- React
+- TypeScript
+- Remotion
+- CSS
+- SVG animations
+
+## Run Locally
+
+Clone the repository and install dependencies:
+
+```bash
+npm install
+```
+
+Start the Remotion preview:
+
+```bash
 npm run dev
 ```
 
-**Render video**
+Render the video:
 
-```console
-npx remotion render
+```bash
+npx remotion render src/index.ts CodePanel renders/javascript-function-explainer-final.mp4
 ```
 
-**Upgrade Remotion**
+## Project Structure
 
-```console
-npx remotion upgrade
-```
+- `src/` — Animation components and video composition
+- `public/` — Narration audio
+- `renders/` — Local rendered video output (not tracked by Git)
 
-## Docs
+## About CodeFlow Visuals
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+CodeFlow Visuals creates clear, engaging visual explanations of programming concepts, software workflows, and technical ideas.
 
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+**Complex code. Clear visuals.**
