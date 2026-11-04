@@ -1,3 +1,4 @@
+import { CodePanel } from "./CodePanel";
 import { Composition, Folder } from "remotion";
 import { HelloWorld } from "./HelloWorld";
 import { Logo } from "./HelloWorld/Logo";
@@ -33,13 +34,22 @@ export const RemotionRoot: React.FC = () => {
             titleColor: "#000000",
           }}
         />
+
+        <Composition
+          id="CodePanel"
+          component={CodePanel}
+          durationInFrames={1076}
+          fps={30}
+          width={1920}
+          height={1080}
+        />
       </Folder>
       <Composition
         // You can take the "id" to render a video:
         // bunx remotion render HelloWorld
         id="HelloWorld"
         component={HelloWorld}
-        durationInFrames={150}
+        durationInFrames={165}
         fps={30}
         width={1920}
         height={1080}
