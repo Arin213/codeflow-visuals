@@ -1,6 +1,9 @@
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 
-const captions = [
+/** Captions for Video #1: JavaScript function execution.
+ *  Timings were measured against public/narration.wav and are synced — do NOT modify
+ *  without permission. */
+export const functionExecutionCaptions: Caption[] = [
     { start: 0, end: 74, text: "Let's see how JavaScript executes a function." },
 
     { start: 93, end: 194, text: "First, we declare a function called calculateTotal." },
@@ -21,7 +24,13 @@ const captions = [
 ];
 
 
-export const Subtitles: React.FC = () => {
+export type Caption = {
+    start: number;
+    end: number;
+    text: string;
+};
+
+export const Subtitles: React.FC<{ captions: Caption[] }> = ({ captions }) => {
     const frame = useCurrentFrame();
 
     const currentCaption = captions.find(

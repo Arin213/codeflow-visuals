@@ -1,5 +1,5 @@
 
-import { Subtitles } from "./Subtitles";
+import { functionExecutionCaptions, Subtitles } from "./Subtitles";
 import {
     AbsoluteFill,
     Audio,
@@ -452,7 +452,7 @@ export const CodePanel: React.FC = () => {
                 </svg>
             </div>
 
-            <Subtitles />
+            <Subtitles captions={functionExecutionCaptions} />
         </AbsoluteFill>
     );
 };
