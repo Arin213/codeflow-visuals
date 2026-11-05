@@ -1,5 +1,6 @@
 import { Composition, Folder } from "remotion";
 import { CodePanel } from "./CodePanel";
+import { EventLoop, DURATION } from "./EventLoop";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -8,6 +9,15 @@ export const RemotionRoot: React.FC = () => {
         id="CodePanel"
         component={CodePanel}
         durationInFrames={1076}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      {/* Video #2 — placeholder duration until narration WAV is measured */}
+      <Composition
+        id="EventLoop"
+        component={EventLoop}
+        durationInFrames={DURATION}
         fps={30}
         width={1920}
         height={1080}
