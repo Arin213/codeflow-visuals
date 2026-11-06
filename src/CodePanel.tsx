@@ -1,5 +1,5 @@
 
-import { functionExecutionCaptions, Subtitles } from "./Subtitles";
+import { Subtitles, functionExecutionCaptions } from "./Subtitles";
 import {
     AbsoluteFill,
     Audio,
@@ -475,3 +475,4 @@ const valueStyle: React.CSSProperties = {
     fontSize: 36,
     fontWeight: "bold",
 };
+
