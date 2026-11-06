@@ -1,6 +1,7 @@
 import { Composition, Folder } from "remotion";
 import { CodePanel } from "./CodePanel";
 import { EventLoop, DURATION } from "./EventLoop";
+import { AsyncAwait, ADURATION } from "./AsyncAwait";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -18,6 +19,15 @@ export const RemotionRoot: React.FC = () => {
         id="EventLoop"
         component={EventLoop}
         durationInFrames={DURATION}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      {/* Video #3 — async/await deep dive, suspension-hook mechanic */}
+      <Composition
+        id="AsyncAwait"
+        component={AsyncAwait}
+        durationInFrames={ADURATION}
         fps={30}
         width={1920}
         height={1080}

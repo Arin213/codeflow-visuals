@@ -30,7 +30,11 @@ export type Caption = {
     text: string;
 };
 
-export const Subtitles: React.FC<{ captions: Caption[] }> = ({ captions }) => {
+export const Subtitles: React.FC<{
+    captions: Caption[];
+    /** Sketch/notebook mode: transparent background, ink text (Videos #1/#2 untouched). */
+    transparent?: boolean;
+}> = ({ captions, transparent = false }) => {
     const frame = useCurrentFrame();
 
     const currentCaption = captions.find(
@@ -52,17 +56,27 @@ export const Subtitles: React.FC<{ captions: Caption[] }> = ({ captions }) => {
         >
             <div
                 style={{
-                    backgroundColor: "rgba(0, 0, 0, 0.88)",
-                    color: "#FFFFFF",
-                    fontSize: 38,
-                    fontWeight: 600,
+                    backgroundColor: transparent
+                        ? "rgba(0, 0, 0, 0)"
+                        : "rgba(0, 0, 0, 0.88)",
+                    color: transparent ? "#3A2E1E" : "#FFFFFF",
+                    fontSize: transparent ? 36 : 38,
+                    fontWeight: transparent ? 700 : 600,
                     lineHeight: 1.35,
-                    padding: "16px 30px",
+                    padding: transparent ? "12px 24px" : "16px 30px",
                     borderRadius: 12,
                     textAlign: "center",
                     maxWidth: "90%",
-                    fontFamily: "Arial, sans-serif",
-                    boxShadow: "0 4px 18px rgba(0, 0, 0, 0.25)",
+                    fontFamily: transparent
+                        ? '"Segoe Print", "Comic Sans MS", cursive'
+                        : "Arial, sans-serif",
+                    boxShadow:
+                        transparent
+                            ? "none"
+                            : "0 4px 18px rgba(0, 0, 0, 0.25)",
+                    textShadow: transparent
+                        ? "0 1px 0 rgba(243,231,203,0.95), 0 0 8px rgba(243,231,203,0.95)"
+                        : "none",
                 }}
             >
                 {currentCaption.text}
