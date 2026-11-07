@@ -103,7 +103,46 @@ console.log("C");
   classic sketchnote stage (milk-tea aged paper, dot grid, marker ink),
   and a numbered step thread
 
-## Built With
+## Vertical Shorts & Publish Kit
+
+The three long-form videos are flanked by a complete publishing pipeline
+(all upload copy lives in `publish/`):
+
+### Channel art (`publish/youtube/`, `src/PublishArt.tsx`)
+
+- `banner.png` (2560×1440) and one custom thumbnail per video
+  (`thumb-video-{1,2,3}.png`), all rendered from Remotion compositions in
+  the `Publish-Kit` folder so every asset matches the videos' visual
+  language.
+
+### Vertical cutdowns (`src/Shorts.tsx`, `renders/shorts/`)
+
+Five 1080×1920 (9:16) shorts — real compositions, not crops — that winnow
+each long-form video down to one scene while keeping the exact
+word-synced narration timeline:
+
+| Cut | Story | Length |
+|---|---|---|
+| Short cut 1 | hook hangs showData → **C prints before B** → fulfilled | ~55s |
+| Short cut 2 | `await` fires → hook grabs the card → *in limbo* | ~26s |
+| Short cut 3 | fulfill → microtask chip **jumps the queue** → resumes → B | ~56s |
+| Short cut 4 | event loop: Start → `setTimeout` → End → **Timeout last** | ~50s |
+| Short cut 5 | function execution: call → 100 × 3 → 300 → return | ~36s |
+| Full film | entire async/await video, uncut vertical master | 2:58 |
+
+Every cut window is chosen from the measured narration waveform so it
+opens inside a silence gap on a sentence that needs no prior context —
+no mid-sentence cold opens.
+
+### Upload copy (`publish/`)
+
+- `README.md` — pre-flight ordering checklist
+- `youtube/channel-setup.md` + per-video titles/descriptions/tags
+- `tiktok/captions.md`, `meta/captions.md` — paste-ready captions,
+  hashtags, and posting order (3-day stagger, pin cut 1)
+- `vertical-cutdowns/SPEC.md` — the cutdown design spec
+
+
 
 - React
 - TypeScript
@@ -115,7 +154,10 @@ console.log("C");
 
 - Composition IDs: `CodePanel` (1920×1080, 30fps, 1076 frames),
   `EventLoop` (1628 frames), and `AsyncAwait` (5346 frames), all
-  1920×1080 @ 30fps.
+  1920×1080 @ 30fps; vertical versions live in the `Shorts` folder
+  (`ShortCPrintsBeforeB`, `ShortHookLatch`, `ShortQueueJump`,
+  `ShortTimeoutRace`, `ShortFunctionExec`, `ShortAsyncFull` — all
+  1080×1920), plus the `Publish-Kit` folder for banner/thumbnails.
 - Every narration WAV is word-measured with faster-whisper (raw 16kHz
   float arrays) so subtitle and visual timing match the audio exactly;
   each video's timings live as word-anchored `BEATS` constants at the

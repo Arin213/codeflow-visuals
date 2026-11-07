@@ -21,7 +21,7 @@ import { Subtitles } from "./Subtitles";
 
 export const DURATION = 1628;
 
-const SENTENCES = [
+export const SENTENCES = [
     "Have you ever wondered how JavaScript handles asynchronous tasks with only a single thread?",
     "It all comes down to the Event Loop.",
     'First, console dot log("Start") enters the Call Stack, runs immediately, and prints Start.',
@@ -34,7 +34,7 @@ const SENTENCES = [
 ];
 
 /** Real sentence-gap midpoints from the narration waveform. */
-const PHASE_STARTS = [0, 155, 225, 471, 729, 928, 1070, 1271, 1494];
+export const PHASE_STARTS = [0, 155, 225, 471, 729, 928, 1070, 1271, 1494];
 
 const EVENTLOOP_CAPTIONS: Caption[] = SENTENCES.map((text, i) => ({
     start: PHASE_STARTS[i],
@@ -44,8 +44,9 @@ const EVENTLOOP_CAPTIONS: Caption[] = SENTENCES.map((text, i) => ({
 
 /** Word-anchored visual beats (frames).
  *  S3/S4/S5/S8 anchor on the narrator's actual words (push/print/pop). */
-const BEATS = {
+export const BEATS = {
     introLoopWords: [165, 225], // "It all comes down to the event loop."
+
 
     s3Push: 333, // "enters the call stack"
     s3Print: 429, // "prints start"
@@ -76,7 +77,7 @@ const BEATS = {
 // Highlight follows the narration phase (not word beats):
 //   p2 -> line 0 | p3 -> lines 1..3 | p4 -> line 4 | p7 -> line 2
 // ------------------------------------------------------------------
-const codeLines = [
+export const codeLines = [
     'console.log("Start");',
     "setTimeout(() => {",
     '  console.log("Timeout");',
@@ -84,7 +85,7 @@ const codeLines = [
     'console.log("End");',
 ];
 
-const LINE_BY_PHASE: number[][] = [
+export const LINE_BY_PHASE: number[][] = [
     [],
     [],
     [0],

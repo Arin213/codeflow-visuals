@@ -28,7 +28,7 @@ import { Subtitles } from "./Subtitles";
 
 export const ADURATION = 5346;
 
-const SENTENCES = [
+export const SENTENCES = [
     "Inside every async function there is a hidden piece of machinery — a hook — that can stop your code mid line, and hang it in the air.",
     "In this video, we watch it live, on this real code.",
     "Our script declares an async function, called showData.",
@@ -62,7 +62,7 @@ const SENTENCES = [
 ];
 
 /** Real sentence-gap midpoints from the narration waveform. */
-const PHASE_STARTS = [
+export const PHASE_STARTS = [
     0, 257, 368, 480, 711, 910, 977, 1140, 1202, 1358, 1578, 1794, 1971,
     2175, 2334, 2555, 2820, 2937, 3189, 3406, 3532, 3759, 3897, 4126, 4343,
     4420, 4644, 4861, 4919, 5021,
@@ -75,7 +75,7 @@ const ASYNC_CAPTIONS: Caption[] = SENTENCES.map((text, i) => ({
 }));
 
 /** Word-anchored visual beats (frames). */
-const BEATS = {
+export const BEATS = {
     s1HookWord: 138, // "a hook"
     s1Hang: 206, // "hang it in the air"
 
@@ -119,7 +119,7 @@ const BEATS = {
  * Source code shown in the left panel — chosen so the console truth
  * (A, then C, then B) it self-demonstrates while the narrator talks.
  * ------------------------------------------------------------------ */
-const codeLines = [
+export const codeLines = [
     "async function showData() {",
     '  console.log("A");',
     "  const data = await getData();",
@@ -130,7 +130,7 @@ const codeLines = [
 ];
 
 // Highlight follows the narration sentence (phases 0..29).
-const LINE_BY_PHASE: number[][] = [
+export const LINE_BY_PHASE: number[][] = [
     [], // p0 hook teaser
     [], // p1 watch it live
     [0], // p2 declares showData
