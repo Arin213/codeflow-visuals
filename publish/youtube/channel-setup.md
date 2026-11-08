@@ -17,19 +17,25 @@ CodeFlow Visuals
 ## Channel description
 
 ```
-Complex code. Clear visuals. Animations that make JavaScript and computer
-science concepts finally make sense — from function execution and the event
-loop to async/await under the hood. Every video is a hand-built Remotion
-animation synced word-by-word to narration: the call stack, promises,
-microtasks, and the suspension hook, drawn like a sketchbook come to life.
-New technical explainers regularly. Built for developers, students, and
-technical educators.
+Complex code. Clear visuals. Animations that make programming concepts
+finally click — the machinery most tutorials skip: the call stack, the
+event loop, promises, microtasks, and how React actually works when you
+render a component.
+
+The series so far: JavaScript function execution, the event loop, and
+async/await under the hood — every video is a hand-built Remotion
+animation synced word-by-word to narration, drawn like a sketchbook come
+to life.
+
+The concept I'm struggling with becomes the next visual: when something
+trips me up, I take it apart and draw how it moves. New technical
+explainers regularly — for developers, students, and technical educators.
 ```
 
 ## Channel keywords (Settings → Channel → Keywords)
 
 ```
-javascript, async await, event loop, call stack, javascript animation, learn javascript, technical explainer, javascript tutorial, promises, microtasks, programming concepts, javascript visually
+javascript, how javascript works, call stack, async await, event loop, javascript animation, learn javascript, javascript explained, promises, microtasks, react, how react works, react hooks, react tutorial, technical explainer, programming concepts, code visualization
 ```
 
 ## Contact / links section
