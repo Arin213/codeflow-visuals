@@ -13,8 +13,8 @@ out/
 .DS_Store
 Thumbs.db
 
-# Rendered videos
-renders/*.mp4
+# Rendered videos (all check stills, mp4s, frames — local only)
+renders/
 
 # Private pitch kit — local only, never in the repo
 client/
