@@ -15,3 +15,6 @@ Thumbs.db
 
 # Rendered videos
 renders/*.mp4
+
+# Private pitch kit — local only, never in the repo
+client/
