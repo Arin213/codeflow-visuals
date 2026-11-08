@@ -4,12 +4,14 @@ import { AbsoluteFill } from "remotion";
 /* ==================================================================
  * 📦 PUBLISH KIT ART — rendered by Remotion, zero external cost
  *
- * Four still compositions (each 1 frame long):
+ * Six still compositions (each 1 frame long):
  *   ChannelBanner      2560×1440 — YouTube channel art (safe band
  *                      1546×423 centered — all text inside it)
  *   ThumbFunctionExec  1280×720  — Video #1 thumbnail
  *   ThumbEventLoop     1280×720  — Video #2 thumbnail
  *   ThumbAsyncAwait    1280×720  — Video #3 thumbnail
+ *   ProfileMark        800×800   — channel profile picture
+ *   VideoWatermark     150×150   — transparent video watermark (CF)
  *
  * Style: the same sketchnote language as the videos — milk-tea aged
  * paper, ink borders, wobbly sheets, marker palette.
@@ -303,6 +305,129 @@ export const ChannelBanner: React.FC = () => (
                 Complex code. Clear visuals.
             </div>
         </div>
+    </AbsoluteFill>
+);
+
+/* ---------------- profile picture (800×800) + video watermark (150×150) ---------------- */
+
+/* "CF" monogram: same hand-drawn card language; content is centered so
+ * YouTube's circular masks (profile picture, watermark) never clip it. */
+const CFMonogram: React.FC<{ size: number }> = ({ size }) => (
+    <div
+        style={{
+            ...sheetBase(size * 0.6),
+            width: size * 0.6,
+            height: size * 0.6,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            transform: `rotate(-2deg)`,
+            position: "relative",
+        }}
+    >
+        <span style={{ fontFamily: HAND, fontWeight: 700, fontSize: size * 0.27, color: INK, lineHeight: 1 }}>
+            C
+        </span>
+        <span style={{ fontFamily: HAND, fontWeight: 700, fontSize: size * 0.27, color: BLUE, lineHeight: 1, marginLeft: size * 0.01 }}>
+            F
+        </span>
+        {/* dashed red swash under the letters */}
+        <svg
+            viewBox="0 0 100 24"
+            style={{
+                position: "absolute",
+                left: size * 0.13,
+                bottom: size * 0.075,
+                width: size * 0.34,
+                height: size * 0.082,
+                overflow: "visible",
+            }}
+        >
+            <path
+                d="M 3 8 C 22 20, 70 22, 96 7"
+                stroke={RED}
+                strokeWidth="4"
+                strokeDasharray="7 5"
+                fill="none"
+                strokeLinecap="round"
+                opacity="0.85"
+            />
+        </svg>
+    </div>
+);
+
+export const ProfileMark: React.FC = () => (
+    <AbsoluteFill style={{ background: paperBackground }}>
+        {/* faint doodles in the corners (outside the circular mask) */}
+        <svg viewBox="0 0 800 800" style={{ position: "absolute", inset: 0 }}>
+            <g opacity="0.30" strokeLinecap="round" fill="none">
+                <text x="86" y="122" fontSize="54" fontFamily={MONO} fontWeight="700" fill={INK} stroke="none">
+                    {"{ }"}
+                </text>
+                <text x="560" y="742" fontSize="46" fontFamily={MONO} fontWeight="700" fill={INK} stroke="none">
+                    await
+                </text>
+                <circle cx="672" cy="118" r="38" stroke={AMBER} strokeWidth="7" />
+                <path d="M 672 80 L 672 96" stroke={AMBER} strokeWidth="5" />
+            </g>
+        </svg>
+        <div style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center" }}>
+            <CFMonogram size={800} />
+        </div>
+    </AbsoluteFill>
+);
+
+/* Transparent PNG, ink letters with a white halo — legible on both the
+ * milk-tea paper scenes and the dark runtime scenes. */
+export const VideoWatermark: React.FC = () => (
+    <AbsoluteFill style={{ background: "transparent", display: "grid", placeItems: "center" }}>
+        <div
+            style={{
+                display: "flex",
+                alignItems: "baseline",
+                transform: "rotate(-4deg)",
+                filter: "drop-shadow(0 1px 0 rgba(0,0,0,0.25))",
+            }}
+        >
+            <span
+                style={{
+                    fontFamily: HAND,
+                    fontWeight: 700,
+                    fontSize: 74,
+                    lineHeight: 1,
+                    color: INK,
+                    textShadow:
+                        "-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff",
+                }}
+            >
+                C
+            </span>
+            <span
+                style={{
+                    fontFamily: HAND,
+                    fontWeight: 700,
+                    fontSize: 74,
+                    lineHeight: 1,
+                    color: BLUE,
+                    marginLeft: 2,
+                    textShadow:
+                        "-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff",
+                }}
+            >
+                F
+            </span>
+        </div>
+        <svg viewBox="0 0 100 20" style={{ position: "absolute", left: 24, bottom: 26, width: 56, height: 12 }}>
+            <path
+                d="M 4 6 C 22 18, 70 19, 96 5"
+                stroke={RED}
+                strokeWidth="4"
+                strokeDasharray="7 5"
+                fill="none"
+                strokeLinecap="round"
+                opacity="0.85"
+            />
+        </svg>
     </AbsoluteFill>
 );
 

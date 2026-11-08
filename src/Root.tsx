@@ -7,6 +7,8 @@ import {
   ThumbFunctionExec,
   ThumbEventLoop,
   ThumbAsyncAwait,
+  ProfileMark,
+  VideoWatermark,
 } from "./PublishArt";
 import {
   ShortCPrintsBeforeB,
@@ -128,6 +130,22 @@ export const RemotionRoot: React.FC = () => {
           fps={30}
           width={1280}
           height={720}
+        />
+        <Composition
+          id="ProfileMark"
+          component={ProfileMark}
+          durationInFrames={1}
+          fps={30}
+          width={800}
+          height={800}
+        />
+        <Composition
+          id="VideoWatermark"
+          component={VideoWatermark}
+          durationInFrames={1}
+          fps={30}
+          width={150}
+          height={150}
         />
       </Folder>
     </Folder>

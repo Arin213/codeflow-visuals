@@ -45,5 +45,18 @@ field) and, later, the portfolio site.
 
 ## Banner
 
+`publish/youtube/banner.png` (2560×1440)
+
+## Profile picture
+
+`publish/youtube/profile.png` (800×800) — Customisation → Branding →
+Picture. The card stays inside the circular crop by design.
+
+## Video watermark
+
+`publish/youtube/watermark.png` (150×150, transparent) — Customisation →
+Branding → Video watermark, display time **Entire video**. Shown
+bottom-right on every video; clicking it subscribes.
+
 Use `banner.png` — the center band (1546×423) is phone-visible; the wide
 area shows on TV only. Don't add text outside the safe band.
