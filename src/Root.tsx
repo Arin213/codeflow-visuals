@@ -3,10 +3,18 @@ import { CodePanel } from "./CodePanel";
 import { EventLoop, DURATION } from "./EventLoop";
 import { AsyncAwait, ADURATION } from "./AsyncAwait";
 import {
+  AsyncEvolution,
+  ShortEvolutionHell,
+  ShortEvolutionFix,
+  ShortEvolutionFull,
+  ADURATION as EVOLUTION_DURATION,
+} from "./AsyncEvolution";
+import {
   ChannelBanner,
   ThumbFunctionExec,
   ThumbEventLoop,
   ThumbAsyncAwait,
+  ThumbEvolution,
   ProfileMark,
   VideoWatermark,
 } from "./PublishArt";
@@ -44,6 +52,15 @@ export const RemotionRoot: React.FC = () => {
         id="AsyncAwait"
         component={AsyncAwait}
         durationInFrames={ADURATION}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      {/* Video #4 — the evolution of async: callbacks → promises → await */}
+      <Composition
+        id="AsyncEvolution"
+        component={AsyncEvolution}
+        durationInFrames={EVOLUTION_DURATION}
         fps={30}
         width={1920}
         height={1080}
@@ -97,6 +114,31 @@ export const RemotionRoot: React.FC = () => {
           width={1080}
           height={1920}
         />
+        {/* Video #4 verticals — measured windows from the same timeline */}
+        <Composition
+          id="ShortEvolutionHell"
+          component={ShortEvolutionHell}
+          durationInFrames={1307}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="ShortEvolutionFix"
+          component={ShortEvolutionFix}
+          durationInFrames={1657}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="ShortEvolutionFull"
+          component={ShortEvolutionFull}
+          durationInFrames={2964}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
       </Folder>
       <Folder name="Publish-Kit">
         <Composition
@@ -126,6 +168,14 @@ export const RemotionRoot: React.FC = () => {
         <Composition
           id="ThumbAsyncAwait"
           component={ThumbAsyncAwait}
+          durationInFrames={1}
+          fps={30}
+          width={1280}
+          height={720}
+        />
+        <Composition
+          id="ThumbEvolution"
+          component={ThumbEvolution}
           durationInFrames={1}
           fps={30}
           width={1280}

@@ -50,6 +50,24 @@ Full video on YouTube — link in bio.
 #javascript #coding #programming #softwareengineer #learntocode #computerscience
 ```
 
+### Cut 6 — "Callback hell" (Video #4, part 1)
+
+```
+One level is fine. Three levels is callback hell 🕳️ Every step needs the one before it — so every step nests inside the last.
+
+Full breakdown: callbacks → promises → await. Link in bio.
+#javascript #coding #programming #webdev #learntocode #developer
+```
+
+### Cut 7 — "Every step was the last idea" (Video #4, part 2)
+
+```
+Promises, then async/await — and underneath it's still the same idea, rearranged 🧩
+
+Full explainer on YouTube — link in bio.
+#javascript #asyncawait #promises #webdev #coding #programming
+```
+
 ## Meta-specific notes
 
 - Instagram: use a Reels cover frame from the clip (the still with the

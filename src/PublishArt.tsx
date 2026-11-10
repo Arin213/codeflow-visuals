@@ -722,3 +722,246 @@ export const ThumbAsyncAwait: React.FC = () => (
         </div>
     </AbsoluteFill>
 );
+
+/* ==================================================================
+ * VIDEO #4 THUMBNAIL — "callback hell → await"
+ *
+ * Reads at 320px wide: two huge words, two shapes, one arrow. No
+ * code, no caption — the pyramid and the staircase carry the story.
+ * ================================================================== */
+
+const ThumbPyramid: React.FC<{ x: number; y: number; scale: number }> = ({
+    x,
+    y,
+    scale,
+}) => (
+    <div
+        style={{
+            position: "absolute",
+            left: x,
+            top: y,
+            transform: `scale(${scale})`,
+            transformOrigin: "0 0",
+        }}
+    >
+        {["getUser", "getPosts", "getComments", "done"].map((label, i) => (
+            <div
+                key={label}
+                style={{
+                    marginLeft: i * 26,
+                    marginTop: i === 0 ? 0 : 10,
+                    width: 340 - i * 26,
+                    height: 52,
+                    border: `4px solid ${i === 3 ? RED : BLUE}`,
+                    background: i === 3 ? "#FBE9E6" : "#FFFFFF",
+                    borderRadius: "12px 6px 10px 7px / 7px 10px 6px 12px",
+                    boxShadow: "4px 5px 0 rgba(47,42,38,0.12)",
+                    display: "flex",
+                    alignItems: "center",
+                    paddingLeft: 16,
+                    fontFamily: MONO,
+                    fontWeight: 700,
+                    fontSize: 26,
+                    color: INK,
+                }}
+            >
+                {label}
+            </div>
+        ))}
+    </div>
+);
+
+const ThumbStair: React.FC<{ x: number; y: number; scale: number }> = ({
+    x,
+    y,
+    scale,
+}) => (
+    <div
+        style={{
+            position: "absolute",
+            left: x,
+            top: y,
+            transform: `scale(${scale})`,
+            transformOrigin: "0 0",
+        }}
+    >
+        {["await user", "await posts", "await comments", "return"].map((label, i) => (
+            <div
+                key={label}
+                style={{
+                    marginLeft: i * 30,
+                    marginTop: i === 0 ? 0 : 9,
+                    width: 310 - i * 22,
+                    height: 48,
+                    border: `4px solid ${AMBER}`,
+                    background: "#FFFFFF",
+                    borderRadius: "11px 6px 9px 7px / 7px 9px 6px 11px",
+                    boxShadow: "4px 5px 0 rgba(47,42,38,0.12)",
+                    display: "flex",
+                    alignItems: "center",
+                    paddingLeft: 16,
+                    fontFamily: MONO,
+                    fontWeight: 700,
+                    fontSize: 23,
+                    color: INK,
+                }}
+            >
+                {label}
+            </div>
+        ))}
+    </div>
+);
+
+export const ThumbEvolution: React.FC = () => (
+    <AbsoluteFill style={{ background: paperBackground, overflow: "hidden" }}>
+        {/* kicker */}
+        <div
+            style={{
+                position: "absolute",
+                left: 58,
+                top: 40,
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 30,
+                letterSpacing: 1,
+                color: "#6B6357",
+            }}
+        >
+            async — the evolution
+        </div>
+
+        {/* ① callbacks */}
+        <div style={{ position: "absolute", left: 58, top: 86 }}>
+            <ChunkyLabel fontSize={112} color={RED}>
+                callback
+            </ChunkyLabel>
+        </div>
+        <div style={{ position: "absolute", left: 58, top: 214 }}>
+            <ChunkyLabel fontSize={112} color={RED} underline>
+                hell
+            </ChunkyLabel>
+        </div>
+
+        <ThumbPyramid x={74} y={392} scale={0.94} />
+
+        {/* "no" badge at the pyramid's shoulder */}
+        <div
+            style={{
+                position: "absolute",
+                left: 358,
+                top: 372,
+                width: 62,
+                height: 62,
+                borderRadius: "50%",
+                background: "#FBE9E6",
+                border: `4px solid ${RED}`,
+                display: "grid",
+                placeItems: "center",
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 40,
+                color: RED,
+                transform: "rotate(-8deg)",
+            }}
+        >
+            ✗
+        </div>
+
+        {/* arrow */}
+        <div
+            style={{
+                position: "absolute",
+                left: 462,
+                top: 356,
+                width: 250,
+                height: 96,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 2,
+            }}
+        >
+            <svg viewBox="0 0 250 56" style={{ width: 250, height: 56 }}>
+                <path
+                    d="M 8 28 L 216 28 M 192 10 L 224 28 L 192 46"
+                    fill="none"
+                    stroke={INK}
+                    strokeWidth={9}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+            <div
+                style={{
+                    fontFamily: HAND,
+                    fontWeight: 700,
+                    fontSize: 30,
+                    color: "#6B6357",
+                    transform: "rotate(-2deg)",
+                }}
+            >
+                then
+            </div>
+        </div>
+
+        {/* ② async/await */}
+        <div style={{ position: "absolute", left: 742, top: 84 }}>
+            <ChunkyLabel fontSize={136} color={AMBER}>
+                await
+            </ChunkyLabel>
+        </div>
+
+        {/* hand-drawn amber circle around await */}
+        <svg
+            viewBox="0 0 1280 720"
+            style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+        >
+            <path
+                d="M 736 96 C 770 40, 990 26, 1122 52 C 1218 70, 1200 186, 1052 200 C 918 212, 760 210, 742 152 C 734 124, 740 110, 748 100"
+                fill="none"
+                stroke={AMBER}
+                strokeWidth={8}
+                strokeLinecap="round"
+                opacity="0.8"
+            />
+        </svg>
+
+        <ThumbStair x={790} y={312} scale={1.0} />
+
+        {/* payoff strip */}
+        <div
+            style={{
+                position: "absolute",
+                right: 54,
+                bottom: 40,
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 34,
+                color: INK,
+                transform: "rotate(-1.2deg)",
+                background: "rgba(253,243,208,0.94)",
+                border: `3px solid ${INK}`,
+                borderRadius: "16px 8px 14px 9px / 9px 14px 8px 16px",
+                padding: "8px 24px",
+            }}
+        >
+            same idea, rearranged
+        </div>
+
+        {/* framing line */}
+        <div
+            style={{
+                position: "absolute",
+                left: 58,
+                bottom: 44,
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 30,
+                color: "#6B6357",
+                transform: "rotate(-0.6deg)",
+            }}
+        >
+            three eras. one problem.
+        </div>
+    </AbsoluteFill>
+);

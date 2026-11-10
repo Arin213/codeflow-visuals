@@ -34,6 +34,18 @@ setTimeout(fn, 0) will NEVER print first. Here's why ⏲️ #javascript #eventlo
 Watch JavaScript run your function, frame by frame 🧠 #javascript #coding #programming #learntocode #softwareengineer
 ```
 
+## Cut 6 — "Callback hell" (from Video #4, part 1)
+
+```
+One level is fine. Three levels is callback hell 🕳️ #javascript #coding #programming #webdev #learntocode
+```
+
+## Cut 7 — "Every step was the last idea" (from Video #4, part 2)
+
+```
+Callbacks → promises → async/await. Same idea, rearranged 🧩 #javascript #asyncawait #promises #coding #programming
+```
+
 ## Posting notes
 
 - Post straight to the point: no intro, hook in second 0
