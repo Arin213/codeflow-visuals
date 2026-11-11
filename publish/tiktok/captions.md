@@ -46,6 +46,12 @@ One level is fine. Three levels is callback hell 🕳️ #javascript #coding #pr
 Callbacks → promises → async/await. Same idea, rearranged 🧩 #javascript #asyncawait #promises #coding #programming
 ```
 
+## Cut 8 — PILLAR: the full async/await film (2:58, uncut master)
+
+```
+The whole story, one take. await hooks the function, hangs it in the air, and the event loop puts it back where it left off. Watch it all the way through 🪝 #javascript #asyncawait #eventloop #webdev #coding #programming #learntocode
+```
+
 ## Posting notes
 
 - Post straight to the point: no intro, hook in second 0

@@ -68,6 +68,15 @@ Full explainer on YouTube — link in bio.
 #javascript #asyncawait #promises #webdev #coding #programming
 ```
 
+### Cut 8 — PILLAR: the full async/await film (2:58, uncut master)
+
+```
+The whole story, one take. await hooks the function, hangs it in the air, and the event loop puts it back where it left off 🪝
+
+Full deep dive on YouTube — link in bio.
+#javascript #asyncawait #eventloop #webdev #coding #programming #learntocode
+```
+
 ## Meta-specific notes
 
 - Instagram: use a Reels cover frame from the clip (the still with the
