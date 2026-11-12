@@ -77,6 +77,15 @@ Full deep dive on YouTube — link in bio.
 #javascript #asyncawait #eventloop #webdev #coding #programming #learntocode
 ```
 
+### Cut 9 — PILLAR: the full scope & closures film (2:17, uncut master)
+
+```
+Where variables live, why the outside can't reach in, and why counter() keeps counting after outer is done. The idea React is built on 🧠
+
+Full deep dive on YouTube — link in bio.
+#javascript #closures #scope #react #webdev #coding #programming #learntocode
+```
+
 ## Meta-specific notes
 
 - Instagram: use a Reels cover frame from the clip (the still with the

@@ -125,15 +125,42 @@ of the last.
 **Shorts from this video:** callback-hell hook (Cut 6) and the
 rearranged-fix arc (Cut 7), plus the uncut vertical master.
 
+### 5. Scope & Closures
+
+The foundation for React (1080p, 30fps, ~2:17): where variables live, how
+JavaScript searches outward, and why a function can outlive its owner.
+Told in three acts on a "Deep Current" stage — an ink-teal canvas with
+drifting glows, a big opacity-spotlighted code listing, a one-clause
+kinetic caption, and a depth gauge tracking nesting level 0–4.
+
+**What the video demonstrates:**
+
+- **Global scope:** a variable declared in the open that the whole
+  program can read
+- **Function & block scope:** a walled cell — inside prints, outside
+  gets `ReferenceError`; `{ }` braces are the same wall, smaller
+- **The `var` trap:** function-scoped, ignores the brace wall
+- **Lexical scope:** the outward search (inner → outer → global), comet
+  hops ring by ring, and why the chain is decided by *where the code is
+  written*
+- **Closures:** `outer` returns `inner` — the function itself, not a
+  call — and `count` survives: `counter()` prints 1, 2, 3
+- Recap: a scope-visibility matrix (who can read `name`/`message`/
+  `count`) plus the three questions to answer before React
+
+**Shorts from this video:** the house act (rooms: global/function/
+block + var trap) and the closures act (`return inner`, count survives),
+plus the uncut vertical master.
+
 ## Vertical Shorts & Publish Kit
 
-The four long-form videos are flanked by a complete publishing pipeline
+The five long-form videos are flanked by a complete publishing pipeline
 (all upload copy lives in `publish/`):
 
 ### Channel art (`publish/youtube/`, `src/PublishArt.tsx`)
 
 - `banner.png` (2560×1440) and one custom thumbnail per video
-  (`thumb-video-{1,2,3,4}.png`), all rendered from Remotion compositions in
+  (`thumb-video-{1,2,3,4,5}.png`), all rendered from Remotion compositions in
   the `Publish-Kit` folder so every asset matches the videos' visual
   language.
 
@@ -152,8 +179,11 @@ word-synced narration timeline:
 | Short cut 5 | function execution: call → 100 × 3 → 300 → return | ~36s |
 | Short cut 6 | callback hell — one level fine, three levels nightmare | ~44s |
 | Short cut 7 | evolution fix — callbacks → promises → async/await, rearranged | ~55s |
+| Short cut 8 | scope rooms — global / function / block + the `var` trap | ~56s |
+| Short cut 9 | closures — `return inner`, and count survives: 1, 2, 3 | ~1:21 |
 | Full film (V3) | entire async/await video, uncut vertical master | 2:58 |
 | Full film (V4) | entire evolution video, uncut vertical master | 1:39 |
+| Full film (V5) | entire scope & closures video, uncut vertical master | 2:17 |
 
 Every cut window is chosen from the measured narration waveform so it
 opens inside a silence gap on a sentence that needs no prior context —
@@ -178,18 +208,23 @@ no mid-sentence cold opens.
 ## Technical Notes
 
 - Composition IDs: `CodePanel` (1920×1080, 30fps, 1076 frames),
-  `EventLoop` (1628 frames), `AsyncAwait` (5346 frames), and
-  `AsyncEvolution` (2964 frames), all 1920×1080 @ 30fps; vertical
-  versions live in the `Shorts` folder (`ShortCPrintsBeforeB`,
-  `ShortHookLatch`, `ShortQueueJump`, `ShortTimeoutRace`,
-  `ShortFunctionExec`, `ShortAsyncFull`, `ShortEvolutionHell`,
-  `ShortEvolutionFix`, `ShortEvolutionFull` — all 1080×1920), plus the
-  `Publish-Kit` folder for banner/thumbnails.
+  `EventLoop` (1628 frames), `AsyncAwait` (5346 frames),
+  `AsyncEvolution` (2964 frames), and `ScopeClosuresV2` (4100 frames),
+  all 1920×1080 @ 30fps; vertical versions live in the `Shorts` folder
+  (`ShortCPrintsBeforeB`, `ShortHookLatch`, `ShortQueueJump`,
+  `ShortTimeoutRace`, `ShortFunctionExec`, `ShortAsyncFull`,
+  `ShortEvolutionHell`, `ShortEvolutionFix`, `ShortEvolutionFull`,
+  `ShortScopeRoomsV2`, `ShortScopeClosureV2`, `ShortScopeFullV2` — all
+  1080×1920), plus the `Publish-Kit` folder for banner/thumbnails.
 - Every narration WAV/MP3 is word-measured so subtitle and visual timing
   match the audio exactly; timings live as word-anchored `BEATS` and
   `PHASE_STARTS` constants at the top of each composition
   (`src/Subtitles.tsx`, `src/EventLoop.tsx`, `src/AsyncAwait.tsx`,
-  `src/evolution/parts.tsx`).
+  `src/evolution/parts.tsx`, and the generated `src/scope2/timing.ts`).
+- Video #5's narration + BGM ship as one pre-mixed WAV
+  (`public/scopeclosures2-mix.wav`): voice −18 dBFS with the bed ~15 dB
+  underneath, +3 dB pre-amplified with a soft-knee limiter to cancel
+  Remotion's fixed 0.707 `<Audio>` attenuation.
 - `Subtitles` takes an optional `transparent` prop — Video #3/V4 render
   ink-on-paper captions, while Videos #1/#2 keep their subtitle boxes.
 - The connector thread uses named, layout-measured anchor constants in `src/CodePanel.tsx` (`vbY = (pixelY − 148) / 1.2457`); the later videos

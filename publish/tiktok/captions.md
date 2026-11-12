@@ -52,6 +52,12 @@ Callbacks → promises → async/await. Same idea, rearranged 🧩 #javascript #
 The whole story, one take. await hooks the function, hangs it in the air, and the event loop puts it back where it left off. Watch it all the way through 🪝 #javascript #asyncawait #eventloop #webdev #coding #programming #learntocode
 ```
 
+## Cut 9 — PILLAR: the full scope & closures film (2:17, uncut master)
+
+```
+Where variables live, why the outside can't reach in, and why counter() keeps counting after outer is done. The idea React is built on. Watch it all the way through 🧠 #javascript #closures #scope #react #webdev #coding #programming #learntocode
+```
+
 ## Posting notes
 
 - Post straight to the point: no intro, hook in second 0

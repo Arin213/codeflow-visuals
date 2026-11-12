@@ -965,3 +965,209 @@ export const ThumbEvolution: React.FC = () => (
         </div>
     </AbsoluteFill>
 );
+
+/* ---------------- Video #5 — Scope & Closures thumbnail ---------------- */
+
+export const ThumbScope: React.FC = () => (
+    <AbsoluteFill style={{ background: paperBackground, overflow: "hidden" }}>
+        {/* kicker */}
+        <div
+            style={{
+                position: "absolute",
+                left: 58,
+                top: 40,
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 30,
+                letterSpacing: 1,
+                color: "#6B6357",
+            }}
+        >
+            scope &amp; closures
+        </div>
+
+        {/* ① scope */}
+        <div style={{ position: "absolute", left: 58, top: 96 }}>
+            <ChunkyLabel fontSize={118} color={BLUE} underline>
+                scope
+            </ChunkyLabel>
+        </div>
+        <div
+            style={{
+                position: "absolute",
+                left: 64,
+                top: 236,
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 32,
+                color: "#6B6357",
+                transform: "rotate(-1.5deg)",
+            }}
+        >
+            where variables live
+        </div>
+
+        {/* orbit-chain doodle under "scope" */}
+        <svg
+            viewBox="0 0 420 240"
+            style={{ position: "absolute", left: 44, top: 320, width: 420, height: 240 }}
+        >
+            <ellipse cx={210} cy={200} rx={190} ry={34} fill="none" stroke={INK} strokeWidth="4" opacity={0.75} />
+            <ellipse cx={210} cy={150} rx={130} ry={26} fill="none" stroke={INK} strokeWidth="4" strokeDasharray="10 9" opacity={0.65} />
+            <ellipse cx={210} cy={110} rx={75} ry={19} fill="none" stroke={INK} strokeWidth="4" opacity={0.8} />
+            <path d="M 210 118 L 210 66 M 196 80 L 210 62 L 224 80" fill="none" stroke={INK} strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        {[
+            { t: "country", x: 300, y: 380, c: BLUE },
+            { t: "city", x: 210, y: 470, c: GREEN },
+            { t: "street", x: 130, y: 545, c: RED },
+        ].map((o) => (
+            <div
+                key={o.t}
+                style={{
+                    position: "absolute",
+                    left: o.x,
+                    top: o.y,
+                    fontFamily: MONO,
+                    fontWeight: 700,
+                    fontSize: 25,
+                    color: o.c,
+                    background: "#FFFFFF",
+                    border: `4px solid ${o.c}`,
+                    borderRadius: "999px",
+                    padding: "4px 18px",
+                    boxShadow: "4px 5px 0 rgba(47,42,38,0.14)",
+                    transform: "rotate(-3deg)",
+                }}
+            >
+                {o.t}
+            </div>
+        ))}
+
+        {/* hand-drawn arrow */}
+        <div
+            style={{
+                position: "absolute",
+                left: 470,
+                top: 300,
+                width: 250,
+                height: 96,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 2,
+            }}
+        >
+            <svg viewBox="0 0 250 56" style={{ width: 250, height: 56 }}>
+                <path
+                    d="M 8 28 C 90 18, 160 38, 216 28 M 192 10 L 224 28 L 192 46"
+                    fill="none"
+                    stroke={INK}
+                    strokeWidth={9}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+            <div
+                style={{
+                    fontFamily: HAND,
+                    fontWeight: 700,
+                    fontSize: 30,
+                    color: "#6B6357",
+                    transform: "rotate(-2deg)",
+                }}
+            >
+                but also
+            </div>
+        </div>
+
+        {/* ② closure */}
+        <div style={{ position: "absolute", left: 742, top: 96 }}>
+            <ChunkyLabel fontSize={104} color={AMBER} underline>
+                closure
+            </ChunkyLabel>
+        </div>
+        <div
+            style={{
+                position: "absolute",
+                left: 748,
+                top: 224,
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 32,
+                color: "#6B6357",
+                transform: "rotate(1deg)",
+            }}
+        >
+            it keeps what it found
+        </div>
+
+        {/* scrap note: the counter */}
+        <div
+            style={{
+                position: "absolute",
+                left: 742,
+                top: 300,
+                width: 470,
+                height: 250,
+                ...sheetBase(470),
+                padding: "18px 24px",
+                transform: "rotate(1.2deg)",
+            }}
+        >
+            <div style={{ fontFamily: HAND, fontWeight: 700, fontSize: 27, color: "#6B6357" }}>
+                outer is done… but
+            </div>
+            <div
+                style={{
+                    fontFamily: MONO,
+                    fontWeight: 700,
+                    fontSize: 44,
+                    color: INK,
+                    marginTop: 10,
+                }}
+            >
+                {"{ count }"}
+            </div>
+            <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 40, color: GREEN, marginTop: 12, letterSpacing: 4 }}>
+                1 · 2 · 3
+            </div>
+        </div>
+
+        {/* "still there!" badge on the scrap */}
+        <div
+            style={{
+                position: "absolute",
+                left: 1052,
+                top: 486,
+                padding: "8px 20px",
+                background: "#FBE9E6",
+                border: `5px solid ${RED}`,
+                borderRadius: "18px 8px 14px 9px / 9px 14px 8px 18px",
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 36,
+                color: RED,
+                transform: "rotate(-7deg)",
+                boxShadow: "5px 6px 0 rgba(47,42,38,0.14)",
+            }}
+        >
+            still there!
+        </div>
+
+        {/* bottom tagline */}
+        <div
+            style={{
+                position: "absolute",
+                left: 58,
+                bottom: 26,
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 28,
+                color: "#6B6357",
+            }}
+        >
+            the idea react is built on.
+        </div>
+    </AbsoluteFill>
+);
