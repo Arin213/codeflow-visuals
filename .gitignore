@@ -18,3 +18,11 @@ renders/
 
 # Private pitch kit — local only, never in the repo
 client/
+
+# Reference sample video — someone else's work (@s4.codes TikTok),
+# inspiration only. NEVER commit, never redistribute.
+sample/
+
+# Parallel agent workspace (Claude Code build) + RTK tool state — local only
+.work/
+.rtk/

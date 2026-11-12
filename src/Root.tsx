@@ -10,6 +10,24 @@ import {
   ADURATION as EVOLUTION_DURATION,
 } from "./AsyncEvolution";
 import {
+  ScopeClosures,
+  ShortScopeRooms,
+  ShortScopeClosure,
+  ShortScopeFull,
+  VA_FRAMES,
+  VB_FRAMES,
+  ADURATION as SCOPE_DURATION,
+} from "./ScopeClosures";
+import {
+  ScopeClosuresV2,
+  ShortScopeRoomsV2,
+  ShortScopeClosureV2,
+  ShortScopeFullV2,
+  VA_FRAMES as VA_FRAMES_V2,
+  VB_FRAMES as VB_FRAMES_V2,
+  ADURATION as SCOPE_DURATION_V2,
+} from "./ScopeClosuresV2";
+import {
   ChannelBanner,
   ThumbFunctionExec,
   ThumbEventLoop,
@@ -135,6 +153,75 @@ export const RemotionRoot: React.FC = () => {
           id="ShortEvolutionFull"
           component={ShortEvolutionFull}
           durationInFrames={2964}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+      </Folder>
+      <Folder name="Scope-Closures">
+        <Composition
+          id="ScopeClosures"
+          component={ScopeClosures}
+          durationInFrames={SCOPE_DURATION}
+          fps={30}
+          width={1920}
+          height={1080}
+        />
+        <Composition
+          id="ShortScopeRooms"
+          component={ShortScopeRooms}
+          durationInFrames={VA_FRAMES}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="ShortScopeClosure"
+          component={ShortScopeClosure}
+          durationInFrames={VB_FRAMES}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="ShortScopeFull"
+          component={ShortScopeFull}
+          durationInFrames={SCOPE_DURATION}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+      </Folder>
+      {/* Video #5 v2 — "Deep Current" rebuild (sample-inspired system, own design) */}
+      <Folder name="Scope-Closures-V2">
+        <Composition
+          id="ScopeClosuresV2"
+          component={ScopeClosuresV2}
+          durationInFrames={SCOPE_DURATION_V2}
+          fps={30}
+          width={1920}
+          height={1080}
+        />
+        <Composition
+          id="ShortScopeRoomsV2"
+          component={ShortScopeRoomsV2}
+          durationInFrames={VA_FRAMES_V2}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="ShortScopeClosureV2"
+          component={ShortScopeClosureV2}
+          durationInFrames={VB_FRAMES_V2}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="ShortScopeFullV2"
+          component={ShortScopeFullV2}
+          durationInFrames={SCOPE_DURATION_V2}
           fps={30}
           width={1080}
           height={1920}
