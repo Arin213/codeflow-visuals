@@ -86,6 +86,24 @@ Full deep dive on YouTube — link in bio.
 #javascript #closures #scope #react #webdev #coding #programming #learntocode
 ```
 
+### Cut 10 — "Where variables live" (Video #5, part 1)
+
+```
+JavaScript decides where every variable lives — before your code even runs. Three rooms, three rules. And var ignores the wall 👀
+
+Full video on YouTube — link in bio.
+#javascript #scope #webdev #coding #programming #developer
+```
+
+### Cut 11 — "count survives" (Video #5, part 2)
+
+```
+outer finishes and its variables should disappear. They don't. counter() prints 1, 2, 3 — that memory is the closure, and it's the idea React is built on 🧠
+
+Full deep dive on YouTube — link in bio.
+#javascript #closures #react #webdev #coding #programming #developer
+```
+
 ## Meta-specific notes
 
 - Instagram: use a Reels cover frame from the clip (the still with the

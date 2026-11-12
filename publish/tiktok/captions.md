@@ -58,6 +58,18 @@ The whole story, one take. await hooks the function, hangs it in the air, and th
 Where variables live, why the outside can't reach in, and why counter() keeps counting after outer is done. The idea React is built on. Watch it all the way through 🧠 #javascript #closures #scope #react #webdev #coding #programming #learntocode
 ```
 
+## Cut 10 — "Where variables live" (from Video #5, part 1)
+
+```
+JavaScript decides where your variable lives BEFORE your code runs. And var ignores the wall 👀 #javascript #scope #webdev #coding #programming #learntocode
+```
+
+## Cut 11 — "count survives" (from Video #5, part 2)
+
+```
+outer is done... but counter() still counts: 1, 2, 3. That memory is the closure 🧠 #javascript #closures #react #coding #programming #learntocode
+```
+
 ## Posting notes
 
 - Post straight to the point: no intro, hook in second 0

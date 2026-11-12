@@ -179,8 +179,8 @@ word-synced narration timeline:
 | Short cut 5 | function execution: call → 100 × 3 → 300 → return | ~36s |
 | Short cut 6 | callback hell — one level fine, three levels nightmare | ~44s |
 | Short cut 7 | evolution fix — callbacks → promises → async/await, rearranged | ~55s |
-| Short cut 8 | scope rooms — global / function / block + the `var` trap | ~56s |
-| Short cut 9 | closures — `return inner`, and count survives: 1, 2, 3 | ~1:21 |
+| Short cut 10 | scope rooms — global / function / block + the `var` trap | ~56s |
+| Short cut 11 | closures — `return inner`, and count survives: 1, 2, 3 | ~1:21 |
 | Full film (V3) | entire async/await video, uncut vertical master | 2:58 |
 | Full film (V4) | entire evolution video, uncut vertical master | 1:39 |
 | Full film (V5) | entire scope & closures video, uncut vertical master | 2:17 |
