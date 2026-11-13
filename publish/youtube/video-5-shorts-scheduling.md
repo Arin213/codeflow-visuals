@@ -1,8 +1,7 @@
 # Video #5 shorts — paste-ready scheduling package
 
-Prepared Nov 12. Order matters: **upload V5 long-form as Scheduled
-(Fri Nov 26, 19:00 NPT) FIRST** — grab its `youtu.be/...` URL from the
-scheduled entry, then use it everywhere `{V5}` appears below.
+Prepared Nov 12. V5 is scheduled (Fri Nov 26, 19:00 NPT) — its real
+URL is **`https://youtu.be/0AohAgrgf8M`**, already substituted below.
 
 Video files (all 1080×1920, crf 18, audio pre-mixed):
 
@@ -28,12 +27,12 @@ only); YouTube = full URL in description + pinned comment; Meta =
   ```
   JavaScript decides where every variable lives — before your code even runs. Global, function, block… and var ignores the wall 👀
 
-  Full deep dive: {V5}
+  Full deep dive: https://youtu.be/0AohAgrgf8M
   #javascript #scope #webdev #coding #programming #learntocode
   ```
 - **After it publishes:** pin comment →
   ```
-  Full video: {V5} — every scope rule, animated word-by-word.
+  Full video: https://youtu.be/0AohAgrgf8M — every scope rule, animated word-by-word.
   ```
 
 ### Cut 11 — closures — Sat Nov 28, 17:45
@@ -43,12 +42,12 @@ only); YouTube = full URL in description + pinned comment; Meta =
   ```
   outer finishes and its variables should disappear. They don't. counter() prints 1, 2, 3 — that memory is the closure 🧠
 
-  Full deep dive: {V5}
+  Full deep dive: https://youtu.be/0AohAgrgf8M
   #javascript #closures #react #coding #programming #learntocode
   ```
 - **After it publishes:** pin comment →
   ```
-  Full video: {V5} — includes the return inner vs return inner() trap.
+  Full video: https://youtu.be/0AohAgrgf8M — includes the return inner vs return inner() trap.
   ```
 
 ### Cut 9 (PILLAR) — scope full film — Sun Nov 29, 17:45
@@ -58,12 +57,12 @@ only); YouTube = full URL in description + pinned comment; Meta =
   ```
   The whole story in one vertical take: rooms, the outward search, and the closure that keeps count alive. The idea React is built on.
 
-  Full 16:9 deep dive: {V5}
+  Full 16:9 deep dive: https://youtu.be/0AohAgrgf8M
   #javascript #closures #scope #react #webdev #coding #programming #learntocode
   ```
 - **After it publishes:** pin comment →
   ```
-  Watched all the way through? Then answer the three questions at the end — that's the React homework. Full video: {V5}
+  Watched all the way through? Then answer the three questions at the end — that's the React homework. Full video: https://youtu.be/0AohAgrgf8M
   ```
 
 ---
@@ -127,11 +126,12 @@ Full deep dive on YouTube - link in bio.
 
 ---
 
-## Scheduling checklist (do once V5 is uploaded & scheduled)
+## Scheduling checklist
 
-- [ ] V5 long-form scheduled → copy URL into every `{V5}` above
-- [ ] YT: schedule cut 10 (Nov 27), cut 11 (Nov 28), pillar (Nov 29)
-- [ ] TikTok: schedule cut 10 (Nov 30), cut 11 (Dec 1), pillar (Dec 2)
-- [ ] Meta: schedule cut 10 + cut 11 (Nov 30 + Dec 1, both pages), FB pillar (Dec 5); IG pillar stays manual for Dec 7
-- [ ] Swap `href="#"` in `docs/index.html` card 5 → real V5 URL → commit/push
-- [ ] Note V5 URL in memory §10c-style for the pin rituals
+- [x] V5 long-form scheduled → URL `https://youtu.be/0AohAgrgf8M` substituted everywhere above
+- [x] YT: schedule cut 10 (Nov 27), cut 11 (Nov 28), pillar (Nov 29)
+- [x] TikTok: schedule cut 10 (Nov 30), cut 11 (Dec 1), pillar (Dec 2)
+- [x] Meta: schedule cut 10 + cut 11 (Nov 30 + Dec 1, both pages), FB pillar (Dec 5); IG pillar stays manual for Dec 7
+- [x] Card 5 wired to real V5 URL (commit `6a328ed`)
+- [x] V5 URL in memory for the pin rituals
+- [ ] **Verify in Studio before Nov 27**: cut 10/11 + pillar descriptions and scheduled pinned comments all point to `0AohAgrgf8M` (cut 6/7 were fixed → V4, don't confuse the pairs)
