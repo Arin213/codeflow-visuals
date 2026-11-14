@@ -1,0 +1,58 @@
+This counter has run hundreds of times.
+And yet count never resets to zero.
+Here is the whole component.
+A function that returns a button.
+Your component is just a function.
+Every render, React calls it again — top to bottom.
+A fresh run should give a fresh count: zero.
+But it isn't zero.
+Why?
+The answer is the rule you already know: closures.
+useState keeps its value outside your function.
+Think of it as a box in React's world, not in yours.
+Your function gets torn down and rebuilt every render.
+The box never moves.
+The variable you get back is a window into that box.
+Reading count doesn't run code in your function — it looks outward.
+setCount doesn't change the local variable either.
+It schedules a re-render with a new value.
+So when you click, three things happen.
+setCount records the new value in the box.
+React re-runs your function — top to bottom, again.
+The screen updates — the new count is on the button.
+And hands you the same box through a fresh window.
+A new run, an old value.
+That's the trick.
+But how does React know which box to hand back?
+It can't see inside your function.
+All it sees is the sequence of hook calls.
+Every hook call claims one slot, in order.
+First call: slot zero.
+Second call: slot one.
+React pairs them by position, not by name.
+The order of your hooks is a contract.
+Same order, every render — and the boxes line up forever.
+That contract is why hooks can't loop or branch.
+But if a hook hides inside an if, the order breaks.
+On one render the if runs, on another it doesn't.
+The calls shift.
+Slot one gets handed slot zero's value.
+Slot two gets whatever is left.
+State bleeds between hooks — chaos.
+That's why the Rules of Hooks exist.
+Call every hook at the top level.
+Same order, every render, no exceptions.
+Break it nowhere, and nothing can bleed.
+Now look at the whole picture once more.
+A function that forgets everything on each run.
+A store outside it that forgets nothing.
+An arrow from the inside to the outside — recreated every render.
+That arrow is a closure.
+And closures explain the mystery everyone hits.
+Log count inside a setTimeout — and you'll see the old value.
+Not a bug: the function that ran captured its render's window.
+The box moved on. Your snapshot didn't.
+Read the arrow, not the name.
+Every render has its own window.
+The box is the memory.
+useState is just a closure with a memory.

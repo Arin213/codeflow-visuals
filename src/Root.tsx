@@ -28,6 +28,15 @@ import {
   ADURATION as SCOPE_DURATION_V2,
 } from "./ScopeClosuresV2";
 import {
+  V6Film,
+  V6ShortFirst,
+  V6ShortSecond,
+  V6ShortFull,
+  DUR_FILM as V6_DURATION,
+  DUR_FIRST as V6_FIRST,
+  DUR_SECOND as V6_SECOND,
+} from "./videos/video-6-use-state/Film";
+import {
   ChannelBanner,
   ThumbFunctionExec,
   ThumbEventLoop,
@@ -223,6 +232,41 @@ export const RemotionRoot: React.FC = () => {
           id="ShortScopeFullV2"
           component={ShortScopeFullV2}
           durationInFrames={SCOPE_DURATION_V2}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+      </Folder>
+      {/* Video #6 — "Why useState Remembers" — kit-style modular build */}
+      <Folder name="Video-6-Use-State">
+        <Composition
+          id="V6Film"
+          component={V6Film}
+          durationInFrames={V6_DURATION}
+          fps={30}
+          width={1920}
+          height={1080}
+        />
+        <Composition
+          id="V6ShortFirst"
+          component={V6ShortFirst}
+          durationInFrames={V6_FIRST}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="V6ShortSecond"
+          component={V6ShortSecond}
+          durationInFrames={V6_SECOND}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="V6ShortFull"
+          component={V6ShortFull}
+          durationInFrames={V6_DURATION}
           fps={30}
           width={1080}
           height={1920}

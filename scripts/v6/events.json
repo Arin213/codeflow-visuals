@@ -1,0 +1,299 @@
+{
+ "sentences": [
+  {
+   "start": 0.05,
+   "end": 2.5679347,
+   "text": "This counter has run hundreds of times."
+  },
+  {
+   "start": 2.5679347,
+   "end": 5.3260868,
+   "text": "And yet count never resets to zero."
+  },
+  {
+   "start": 5.3260868,
+   "end": 7.119565,
+   "text": "Here is the whole component."
+  },
+  {
+   "start": 7.119565,
+   "end": 9.1847823,
+   "text": "A function that returns a button."
+  },
+  {
+   "start": 9.1847824,
+   "end": 11.467391,
+   "text": "Your component is just a function."
+  },
+  {
+   "start": 11.467391,
+   "end": 15.5298909,
+   "text": "Every render, React calls it again \u2014 top to bottom."
+  },
+  {
+   "start": 15.529891,
+   "end": 18.6956518,
+   "text": "A fresh run should give a fresh count: zero."
+  },
+  {
+   "start": 18.6956518,
+   "end": 20.0407604,
+   "text": "But it isn't zero."
+  },
+  {
+   "start": 20.0407605,
+   "end": 20.788043,
+   "text": "Why?"
+  },
+  {
+   "start": 20.7880431,
+   "end": 24.1168473,
+   "text": "The answer is the rule you already know: closures."
+  },
+  {
+   "start": 24.1168473,
+   "end": 27.4320646,
+   "text": "useState keeps its value outside your function."
+  },
+  {
+   "start": 27.4320647,
+   "end": 31.2499994,
+   "text": "Think of it as a box in React's world, not in yours."
+  },
+  {
+   "start": 31.2499994,
+   "end": 35.1222819,
+   "text": "Your function gets torn down and rebuilt every render."
+  },
+  {
+   "start": 35.1222819,
+   "end": 36.8070644,
+   "text": "The box never moves."
+  },
+  {
+   "start": 36.8070645,
+   "end": 40.3124992,
+   "text": "The variable you get back is a window into that box."
+  },
+  {
+   "start": 40.3124992,
+   "end": 44.4157599,
+   "text": "Reading count doesn't run code in your function \u2014 it looks outward."
+  },
+  {
+   "start": 44.41576,
+   "end": 47.6222816,
+   "text": "setCount doesn't change the local variable either."
+  },
+  {
+   "start": 47.6222817,
+   "end": 50.5842381,
+   "text": "It schedules a re-render with a new value."
+  },
+  {
+   "start": 50.5842382,
+   "end": 53.0298903,
+   "text": "So when you click, three things happen."
+  },
+  {
+   "start": 53.0298903,
+   "end": 56.1141293,
+   "text": "setCount records the new value in the box."
+  },
+  {
+   "start": 56.1141294,
+   "end": 60.2853249,
+   "text": "React re-runs your function \u2014 top to bottom, again."
+  },
+  {
+   "start": 60.2853249,
+   "end": 63.641303,
+   "text": "The screen updates \u2014 the new count is on the button."
+  },
+  {
+   "start": 63.6413031,
+   "end": 66.5217378,
+   "text": "And hands you the same box through a fresh window."
+  },
+  {
+   "start": 66.5217379,
+   "end": 68.7907595,
+   "text": "A new run, an old value."
+  },
+  {
+   "start": 68.7907596,
+   "end": 69.9320639,
+   "text": "That's the trick."
+  },
+  {
+   "start": 69.9320639,
+   "end": 72.8124986,
+   "text": "But how does React know which box to hand back?"
+  },
+  {
+   "start": 72.8124986,
+   "end": 74.8097811,
+   "text": "It can't see inside your function."
+  },
+  {
+   "start": 74.8097812,
+   "end": 77.5815202,
+   "text": "All it sees is the sequence of hook calls."
+  },
+  {
+   "start": 77.5815203,
+   "end": 80.8288028,
+   "text": "Every hook call claims one slot, in order."
+  },
+  {
+   "start": 80.8288028,
+   "end": 83.0570636,
+   "text": "First call: slot zero."
+  },
+  {
+   "start": 83.0570637,
+   "end": 85.0679332,
+   "text": "Second call: slot one."
+  },
+  {
+   "start": 85.0679332,
+   "end": 88.2880418,
+   "text": "React pairs them by position, not by name."
+  },
+  {
+   "start": 88.2880418,
+   "end": 90.7880417,
+   "text": "The order of your hooks is a contract."
+  },
+  {
+   "start": 90.7880418,
+   "end": 95.3260851,
+   "text": "Same order, every render \u2014 and the boxes line up forever."
+  },
+  {
+   "start": 95.3260852,
+   "end": 98.7364112,
+   "text": "That contract is why hooks can't loop or branch."
+  },
+  {
+   "start": 98.7364112,
+   "end": 102.2961937,
+   "text": "But if a hook hides inside an if, the order breaks."
+  },
+  {
+   "start": 102.2961937,
+   "end": 105.7472805,
+   "text": "On one render the if runs, on another it doesn't."
+  },
+  {
+   "start": 105.7472806,
+   "end": 107.0923892,
+   "text": "The calls shift."
+  },
+  {
+   "start": 107.0923893,
+   "end": 110.1630414,
+   "text": "Slot one gets handed slot zero's value."
+  },
+  {
+   "start": 110.1630414,
+   "end": 112.3777152,
+   "text": "Slot two gets whatever is left."
+  },
+  {
+   "start": 112.3777153,
+   "end": 115.4755413,
+   "text": "State bleeds between hooks \u2014 chaos."
+  },
+  {
+   "start": 115.4755413,
+   "end": 117.7038021,
+   "text": "That's why the Rules of Hooks exist."
+  },
+  {
+   "start": 117.7038022,
+   "end": 119.8913021,
+   "text": "Call every hook at the top level."
+  },
+  {
+   "start": 119.8913021,
+   "end": 123.5869542,
+   "text": "Same order, every render, no exceptions."
+  },
+  {
+   "start": 123.5869542,
+   "end": 126.3315193,
+   "text": "Break it nowhere, and nothing can bleed."
+  },
+  {
+   "start": 126.3315194,
+   "end": 128.4239106,
+   "text": "Now look at the whole picture once more."
+  },
+  {
+   "start": 128.4239107,
+   "end": 131.3994541,
+   "text": "A function that forgets everything on each run."
+  },
+  {
+   "start": 131.3994541,
+   "end": 133.8043453,
+   "text": "A store outside it that forgets nothing."
+  },
+  {
+   "start": 133.8043453,
+   "end": 138.6413017,
+   "text": "An arrow from the inside to the outside \u2014 recreated every render."
+  },
+  {
+   "start": 138.6413018,
+   "end": 140.3532582,
+   "text": "That arrow is a closure."
+  },
+  {
+   "start": 140.3532583,
+   "end": 143.7364104,
+   "text": "And closures explain the mystery everyone hits."
+  },
+  {
+   "start": 143.7364104,
+   "end": 147.8532581,
+   "text": "Log count inside a setTimeout \u2014 and you'll see the old value."
+  },
+  {
+   "start": 147.8532581,
+   "end": 151.8749971,
+   "text": "Not a bug: the function that ran captured its render's window."
+  },
+  {
+   "start": 151.8749972,
+   "end": 153.2880406,
+   "text": "The box moved on."
+  },
+  {
+   "start": 153.2880406,
+   "end": 154.8097797,
+   "text": "Your snapshot didn't."
+  },
+  {
+   "start": 154.8097798,
+   "end": 156.9701058,
+   "text": "Read the arrow, not the name."
+  },
+  {
+   "start": 156.9701058,
+   "end": 159.0489101,
+   "text": "Every render has its own window."
+  },
+  {
+   "start": 159.0489101,
+   "end": 160.7608665,
+   "text": "The box is the memory."
+  },
+  {
+   "start": 160.7608666,
+   "end": 163.5190187,
+   "text": "useState is just a closure with a memory."
+  }
+ ]
+}
