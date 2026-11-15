@@ -1171,3 +1171,218 @@ export const ThumbScope: React.FC = () => (
         </div>
     </AbsoluteFill>
 );
+
+export const ThumbUseState: React.FC = () => (
+    <AbsoluteFill style={{ background: paperBackground, overflow: "hidden" }}>
+        {/* kicker */}
+        <div
+            style={{
+                position: "absolute",
+                left: 58,
+                top: 40,
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 30,
+                letterSpacing: 1,
+                color: "#6B6357",
+            }}
+        >
+            react hooks
+        </div>
+
+        {/* ① the line everyone writes */}
+        <div style={{ position: "absolute", left: 58, top: 96 }}>
+            <ChunkyLabel fontSize={104} color={BLUE} underline>
+                useState
+            </ChunkyLabel>
+        </div>
+        <div
+            style={{
+                position: "absolute",
+                left: 64,
+                top: 226,
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 32,
+                color: "#6B6357",
+                transform: "rotate(-1.5deg)",
+            }}
+        >
+            why it remembers
+        </div>
+
+        {/* code scrap: the component */}
+        <div
+            style={{
+                position: "absolute",
+                left: 58,
+                top: 300,
+                width: 470,
+                height: 250,
+                ...sheetBase(470),
+                padding: "18px 24px",
+                transform: "rotate(-1.2deg)",
+            }}
+        >
+            <div style={{ fontFamily: HAND, fontWeight: 700, fontSize: 27, color: "#6B6357" }}>
+                Counter.tsx
+            </div>
+            <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 27, color: INK, marginTop: 10 }}>
+                const [count, setCount]
+            </div>
+            <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 27, color: BLUE, marginTop: 6 }}>
+                = useState(0);
+            </div>
+            <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 24, color: "#6B6357", marginTop: 12 }}>
+                {"// runs again from the top"}
+            </div>
+        </div>
+
+        {/* "should be 0!" badge on the scrap */}
+        <div
+            style={{
+                position: "absolute",
+                left: 110,
+                top: 545,
+                padding: "8px 20px",
+                background: "#FBE9E6",
+                border: `5px solid ${RED}`,
+                borderRadius: "18px 8px 14px 9px / 9px 14px 8px 18px",
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 34,
+                color: RED,
+                transform: "rotate(-6deg)",
+                boxShadow: "5px 6px 0 rgba(47,42,38,0.14)",
+            }}
+        >
+            should be 0!
+        </div>
+
+        {/* hand-drawn arrow */}
+        <div
+            style={{
+                position: "absolute",
+                left: 470,
+                top: 300,
+                width: 250,
+                height: 96,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 2,
+            }}
+        >
+            <svg viewBox="0 0 250 56" style={{ width: 250, height: 56 }}>
+                <path
+                    d="M 8 28 C 90 18, 160 38, 216 28 M 192 10 L 224 28 L 192 46"
+                    fill="none"
+                    stroke={INK}
+                    strokeWidth={9}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+            <div
+                style={{
+                    fontFamily: HAND,
+                    fontWeight: 700,
+                    fontSize: 30,
+                    color: "#6B6357",
+                    transform: "rotate(-2deg)",
+                }}
+            >
+                but isn&apos;t
+            </div>
+        </div>
+
+        {/* ② the box outside the function */}
+        <div style={{ position: "absolute", left: 742, top: 100 }}>
+            <ChunkyLabel fontSize={62} color={GREEN} underline>
+                react&apos;s world
+            </ChunkyLabel>
+        </div>
+        <div
+            style={{
+                position: "absolute",
+                left: 748,
+                top: 216,
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 32,
+                color: "#6B6357",
+                transform: "rotate(1deg)",
+            }}
+        >
+            the value lives here
+        </div>
+
+        {/* scrap note: the state box */}
+        <div
+            style={{
+                position: "absolute",
+                left: 742,
+                top: 300,
+                width: 470,
+                height: 250,
+                ...sheetBase(470),
+                padding: "18px 24px",
+                transform: "rotate(1.2deg)",
+            }}
+        >
+            <div style={{ fontFamily: HAND, fontWeight: 700, fontSize: 27, color: "#6B6357" }}>
+                three renders later:
+            </div>
+            <div
+                style={{
+                    fontFamily: MONO,
+                    fontWeight: 700,
+                    fontSize: 44,
+                    color: INK,
+                    marginTop: 10,
+                }}
+            >
+                {"{ count: 3 }"}
+            </div>
+            <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 40, color: GREEN, marginTop: 12, letterSpacing: 4 }}>
+                1 · 2 · 3
+            </div>
+        </div>
+
+        {/* "same box!" badge on the scrap */}
+        <div
+            style={{
+                position: "absolute",
+                left: 1052,
+                top: 486,
+                padding: "8px 20px",
+                background: "#E7F0E4",
+                border: `5px solid ${GREEN}`,
+                borderRadius: "18px 8px 14px 9px / 9px 14px 8px 18px",
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 36,
+                color: GREEN,
+                transform: "rotate(-7deg)",
+                boxShadow: "5px 6px 0 rgba(47,42,38,0.14)",
+            }}
+        >
+            same box!
+        </div>
+
+        {/* bottom tagline */}
+        <div
+            style={{
+                position: "absolute",
+                left: 58,
+                bottom: 26,
+                fontFamily: HAND,
+                fontWeight: 700,
+                fontSize: 28,
+                color: "#6B6357",
+            }}
+        >
+            a closure with a memory.
+        </div>
+    </AbsoluteFill>
+);

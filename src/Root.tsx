@@ -45,6 +45,7 @@ import {
   ThumbAsyncAwait,
   ThumbEvolution,
   ThumbScope,
+  ThumbUseState,
   ProfileMark,
   VideoWatermark,
 } from "./PublishArt";
@@ -326,6 +327,14 @@ export const RemotionRoot: React.FC = () => {
         <Composition
           id="ThumbScope"
           component={ThumbScope}
+          durationInFrames={1}
+          fps={30}
+          width={1280}
+          height={720}
+        />
+        <Composition
+          id="ThumbUseState"
+          component={ThumbUseState}
           durationInFrames={1}
           fps={30}
           width={1280}
