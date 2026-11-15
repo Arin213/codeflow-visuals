@@ -1083,3 +1083,21 @@ export const ShortScopeFullV2: React.FC = () => {
     </AbsoluteFill>
   );
 };
+
+/* FB-special 45-60s reel (FB creator tip: 45-60s reels got +48% views).
+ * Closure story standalone: spoken hook -> outer/inner -> 1 2 3 ->
+ * homework CTA -> recap quiz. Distinct window from cuts 10/11. */
+export const FB_START_V2 = 2353; // "Now the part everyone remembers: closures."
+export const FB_FRAMES_V2 = ADURATION - FB_START_V2; // 1747f = 58.2s
+
+export const ShortScopeFBV2: React.FC = () => {
+  const frame = useCurrentFrame();
+  return (
+    <AbsoluteFill style={{ background: BG }}>
+      <DeepCurrent>
+        <Audio src={staticFile("scopeclosures2-mix.wav")} startFrom={FB_START_V2} />
+        <VerticalBody offset={FB_START_V2} f={frame} />
+      </DeepCurrent>
+    </AbsoluteFill>
+  );
+};

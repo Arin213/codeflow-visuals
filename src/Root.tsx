@@ -23,6 +23,8 @@ import {
   ShortScopeRoomsV2,
   ShortScopeClosureV2,
   ShortScopeFullV2,
+  ShortScopeFBV2,
+  FB_FRAMES_V2,
   VA_FRAMES as VA_FRAMES_V2,
   VB_FRAMES as VB_FRAMES_V2,
   ADURATION as SCOPE_DURATION_V2,
@@ -232,6 +234,14 @@ export const RemotionRoot: React.FC = () => {
           id="ShortScopeFullV2"
           component={ShortScopeFullV2}
           durationInFrames={SCOPE_DURATION_V2}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="ShortScopeFBV2"
+          component={ShortScopeFBV2}
+          durationInFrames={FB_FRAMES_V2}
           fps={30}
           width={1080}
           height={1920}
