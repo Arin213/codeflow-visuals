@@ -82,9 +82,9 @@ function Counter() {
   };
 
   return (
-    <button onClick={inc}>
+    ＜button onClick={inc}＞
       clicked {count} times
-    </button>
+    ＜/button＞
   );
 }
 
@@ -92,7 +92,7 @@ function Counter() {
 function Profile() {
   const [name] = useState("Ada"); // slot 0
   const [age] = useState(27);     // slot 1
-  return <ProfileCard name={name} age={age} />;
+  return ＜ProfileCard name={name} age={age} /＞;
 }
 
 // this breaks the contract:
